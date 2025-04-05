@@ -27,6 +27,7 @@ void Automata::off() {
 }
 void Automata::coin(int money) {
     if (state == WAIT || state == ACCEPT) {
+        state = ACCEPT;
         cash += money;
         getState();
     }
@@ -58,7 +59,7 @@ STATES Automata::getState() {
 }
 void Automata::getMenu() {
     for (int i = 0; i < menu.size(); i++) {
-        std::cout << menu<< ' ' << prices[i] << '\n';
+        std::cout << menu[i] << ' ' << prices[i] << '\n';
     }
 }
 void Automata::check(std::string drink) {
