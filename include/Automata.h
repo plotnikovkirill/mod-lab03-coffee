@@ -36,3 +36,4 @@ private:
     void cook();
     void finish();
 };
+#endif  // INCLUDE_AUTOMATA_H_
