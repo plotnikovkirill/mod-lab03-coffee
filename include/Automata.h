@@ -10,30 +10,30 @@
 enum STATES { OFF, WAIT, ACCEPT, CHECK, COOK };
 
 class Automata {
-public:
-    void on();
-    void off();
-    void coin(int money);
-    void choice(std::string drink);
-    void cancel();
-    STATES getState();
-    void getMenu();
-    int getCash();
-    void change();
-    Automata() {
-        cash = 0;
-        state = OFF;
-        menu = { "capuchino", "balerino", "tralalelo", "tralala" };
-        prices = { 130, 100, 120, 80 };
-    }
+ public:
+  void on();
+  void off();
+  void coin(int money);
+  void choice(std::string drink);
+  void cancel();
+  STATES getState();
+  void getMenu();
+  int getCash();
+  void change();
+  Automata() {
+    cash = 0;
+    state = OFF;
+    menu = {"capuchino", "balerino", "tralalelo", "tralala"};
+    prices = {120, 100, 130, 90};
+  }
 
-private:
-    int cash;
-    std::vector<std::string> menu;
-    std::vector<int> prices;
-    STATES state;
-    void check(std::string drink);
-    void cook();
-    void finish();
+ private:
+  int cash;
+  std::vector<std::string> menu;
+  std::vector<int> prices;
+  STATES state;
+  void check(std::string drink);
+  void cook();
+  void finish();
 };
 #endif  // INCLUDE_AUTOMATA_H_
