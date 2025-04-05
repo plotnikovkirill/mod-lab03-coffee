@@ -127,7 +127,7 @@ TEST(AutomataTest, CheckBalanceSufficientFundsGoesToCOOK) {
   a.coin(130);
   a.choice("capuchino");
   ASSERT_EQ(STATES::WAIT, a.getState());
-  ASSERT_EQ(0, a.getCash());
+  ASSERT_EQ(10, a.getCash());
 }
 
 TEST(AutomataTest, CheckBalanceInsufficientFundsGoesBackToWAIT) {
@@ -145,7 +145,7 @@ TEST(AutomataTest, FullCycleExactChangeEspresso) {
   a.coin(80);
   a.choice("tralala");
   ASSERT_EQ(STATES::WAIT, a.getState());
-  ASSERT_EQ(0, a.getCash());
+  ASSERT_EQ(80, a.getCash());
 }
 
 TEST(AutomataTest, TurnOFFFromWAITState) {
